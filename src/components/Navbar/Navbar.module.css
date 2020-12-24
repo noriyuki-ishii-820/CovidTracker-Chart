@@ -1,0 +1,17 @@
+.SNSbtn {
+    background:white !important;
+    margin:0 10px !important;
+}
+
+.SNSbtn:hover {
+    background: rgb(77, 69, 69) !important;
+    color:white;
+    border:1px solid white;
+}
+
+@media (max-width:770px) {
+    .SNSbtn {
+        width:10px !important;
+    }
+
+}

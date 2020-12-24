@@ -1,5 +1,7 @@
 body {
     background-color:rgb(250, 250, 250);
+    margin: 0;
+    padding:0;
 }
 
 .container {
@@ -15,11 +17,8 @@ body {
 }
 
 @media (max-width:770px) {
-    .container {
-        margin: 0 10%;
+    .image {
+        width:80% !important;
     }
 
-    .image {
-        width: 100%;
-    }
 }
