@@ -33,8 +33,8 @@ export default function Navbar () {
           <Typography variant="h6" className={classes.title}>
             COVID-19 TRACKER
           </Typography>
-          <Button variant="outlined" className={styles.SNSbtn}><TwitterIcon /></Button>
-          <Button variant="outlined"  className={styles.SNSbtn}><GitHubIcon /></Button>
+          <a href="https://github.com/noriyuki-ishii-820/CovidTracker-Chart" target="_blank"><Button variant="outlined" className={styles.SNSbtn}><TwitterIcon /></Button></a>
+          <a href="https://twitter.com/nishiiSydDev" target="_blank"><Button variant="outlined"  className={styles.SNSbtn}><GitHubIcon /></Button></a>
         </Toolbar>
       </AppBar>
     </div>
