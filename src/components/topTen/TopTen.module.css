@@ -1,0 +1,10 @@
+.container {
+    margin:50px 0;
+    padding:0;
+    width:100%;
+}
+
+.grid {
+    margin: 0 5%;
+    max-width:100% !important;
+}

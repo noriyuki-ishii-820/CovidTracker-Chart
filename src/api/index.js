@@ -24,7 +24,6 @@ export const fetchDailyData = async () => {
     try {
         const { data } = await axios.get(`${url}/daily`)
 
-
         const modifiedData = data.map((dailyData) => ({
             confirmed: dailyData.confirmed.total,
             deaths: dailyData.deaths.total,
@@ -64,8 +63,31 @@ export const fetchMostCases = async () => {
                 confirmed: countryData.confirmed,
             }));
         
-            console.log(topTenData);
+          
          return topTenData;
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const fetchLeastCases = async () => {
+    try {
+
+            const { data } = await axios.get(`${url}/confirmed`);
+
+            data.sort(function(a, b) {
+                return parseFloat(a.confirmed) - parseFloat(b.confirmed)}  )
+
+            const leastTen = data.slice(0, 10)
+
+            const leastTenData = leastTen.map((countryData) => ({
+                region: countryData.combinedKey,
+                confirmed: countryData.confirmed,
+            }));
+        
+          
+         return leastTenData;
 
     } catch (error) {
         console.log(error)
