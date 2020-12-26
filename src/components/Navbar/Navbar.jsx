@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import styles from "./Navbar.module.css";
+import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,10 +31,7 @@ export default function Navbar () {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            COVID-19 TRACKER
-          </Typography>
+        <Toolbar className={styles.root}> 
           <a href="https://github.com/noriyuki-ishii-820/CovidTracker-Chart" target="_blank"><Button variant="outlined" className={styles.SNSbtn}><TwitterIcon /></Button></a>
           <a href="https://twitter.com/nishiiSydDev" target="_blank"><Button variant="outlined"  className={styles.SNSbtn}><GitHubIcon /></Button></a>
         </Toolbar>

@@ -27,7 +27,7 @@ const TopTen = ()  => {
 
       <Grid container spacing={2} justify="center">
         <Grid item component={Card} xs={10} md={4} className={styles.grid}>
-          <Card>
+       
             <CardContent>
               <Typography variant="h5" component="h2">
               Countries/Regions with the Largest Number of Confirmed Cases
@@ -65,11 +65,11 @@ const TopTen = ()  => {
                     
                 />
                 </CardContent>
-          </Card>
+
         </Grid>
 
         <Grid item component={Card} xs={10} md={4} className={styles.grid}>
-          <Card>
+        
             <CardContent>
               <Typography variant="h5" component="h2">
               Countries/Regions with the Least Number of Confirmed Cases
@@ -81,16 +81,16 @@ const TopTen = ()  => {
                           data: leastData.map(({ confirmed }) => confirmed),
                           label: 'Confirmed Cases',
                           backgroundColor:[
-                            "rgba(62,81,181,1)",
-                            "rgba(62,81,181,.9)",
-                            "rgba(62,81,181,.8)",
-                            "rgba(62,81,181,.7)",
-                            "rgba(62,81,181,.6)",
-                            "rgba(62,81,181,.5)",
-                            "rgba(62,81,181,.4)",
-                            "rgba(62,81,181,.3)",
-                            "rgba(62,81,181,.2)",
                             "rgba(62,81,181,.1)",
+                            "rgba(62,81,181,.2)",
+                            "rgba(62,81,181,.3)",
+                            "rgba(62,81,181,.4)",
+                            "rgba(62,81,181,.5)",
+                            "rgba(62,81,181,.6)",
+                            "rgba(62,81,181,.7)",
+                            "rgba(62,81,181,.8)",
+                            "rgba(62,81,181,.9)",
+                            "rgba(62,81,181,1)",
                           ],
                           fill: true,
                             
@@ -99,7 +99,7 @@ const TopTen = ()  => {
                     
                 />
               </CardContent>
-          </Card>
+    
         </Grid>
       </Grid>
   )

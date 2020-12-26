@@ -76,9 +76,6 @@ export const fetchMostCases = async () => {
 
             newArraySeries.sort(function(a, b) {
                 return parseFloat(b.confirmed) - parseFloat(a.confirmed)}  )
-
-
-        console.log(newArraySeries)
         
         const topTenData = newArraySeries.slice(0, 10)
         
@@ -118,9 +115,6 @@ export const fetchLeastCases = async () => {
 
         newArraySeries.sort(function(a, b) {
             return parseFloat(a.confirmed) - parseFloat(b.confirmed)}  )
-
-
-    console.log(newArraySeries)
     
     const topTenData = newArraySeries.slice(0, 10)
     

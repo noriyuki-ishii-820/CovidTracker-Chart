@@ -5,6 +5,12 @@
 }
 
 .grid {
-    margin: 0 5%;
+    margin: 0 10px;
     max-width:100% !important;
+}
+
+.card {
+    display:flex;
+    justify-content:center;
+    width:100%;
 }
