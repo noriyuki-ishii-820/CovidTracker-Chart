@@ -53,18 +53,37 @@ export const fetchMostCases = async () => {
 
             const { data } = await axios.get(`${url}/confirmed`);
 
-            data.sort(function(a, b) {
+            const dataTest = data.map((confirmedData) => ({
+                country:confirmedData.countryRegion,
+                confirmed: confirmedData.confirmed
+            }))
+
+            var countries = {}
+            var countries_count = {}
+            var newArraySeries = []
+            dataTest.forEach(
+                function(e){
+                    if(!countries[e.country]){
+                        countries[e.country] = 0
+                        countries_count[e.country] = 0
+                    }
+                    countries[e.country] += e.confirmed
+                }
+            )
+            for(var country in countries){
+                newArraySeries.push({country : country, confirmed : countries[country] })
+            }
+
+            newArraySeries.sort(function(a, b) {
                 return parseFloat(b.confirmed) - parseFloat(a.confirmed)}  )
 
-            const topTen = data.slice(0, 10)
 
-            const topTenData = topTen.map((countryData) => ({
-                region: countryData.combinedKey,
-                confirmed: countryData.confirmed,
-            }));
+        console.log(newArraySeries)
         
-          
-         return topTenData;
+        const topTenData = newArraySeries.slice(0, 10)
+        
+        return topTenData;
+
 
     } catch (error) {
         console.log(error)
@@ -74,22 +93,41 @@ export const fetchMostCases = async () => {
 export const fetchLeastCases = async () => {
     try {
 
-            const { data } = await axios.get(`${url}/confirmed`);
+        const { data } = await axios.get(`${url}/confirmed`);
 
-            data.sort(function(a, b) {
-                return parseFloat(a.confirmed) - parseFloat(b.confirmed)}  )
+        const dataTest = data.map((confirmedData) => ({
+            country:confirmedData.countryRegion,
+            confirmed: confirmedData.confirmed
+        }))
 
-            const leastTen = data.slice(0, 10)
+        var countries = {}
+        var countries_count = {}
+        var newArraySeries = []
+        dataTest.forEach(
+            function(e){
+                if(!countries[e.country]){
+                    countries[e.country] = 0
+                    countries_count[e.country] = 0
+                }
+                countries[e.country] += e.confirmed
+            }
+        )
+        for(var country in countries){
+            newArraySeries.push({country : country, confirmed : countries[country] })
+        }
 
-            const leastTenData = leastTen.map((countryData) => ({
-                region: countryData.combinedKey,
-                confirmed: countryData.confirmed,
-            }));
-        
-          
-         return leastTenData;
+        newArraySeries.sort(function(a, b) {
+            return parseFloat(a.confirmed) - parseFloat(b.confirmed)}  )
 
-    } catch (error) {
-        console.log(error)
-    }
+
+    console.log(newArraySeries)
+    
+    const topTenData = newArraySeries.slice(0, 10)
+    
+    return topTenData;
+
+
+} catch (error) {
+    console.log(error)
+}
 }

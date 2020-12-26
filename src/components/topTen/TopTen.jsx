@@ -34,7 +34,7 @@ const TopTen = ()  => {
               </Typography>
                 <HorizontalBar
                     data={{
-                        labels: topData.map(({ region }) => region),
+                        labels: topData.map(({ country }) => country),
                         datasets: [{
                           data: topData.map(({ confirmed }) => confirmed),
                           label: 'Confirmed Cases',
@@ -72,11 +72,11 @@ const TopTen = ()  => {
           <Card>
             <CardContent>
               <Typography variant="h5" component="h2">
-              Countries/Regions with the Smallest Number of Confirmed Cases
+              Countries/Regions with the Least Number of Confirmed Cases
               </Typography>
                 <HorizontalBar
                     data={{
-                        labels: leastData.map(({ region }) => region),
+                        labels: leastData.map(({ country }) => country),
                         datasets: [{
                           data: leastData.map(({ confirmed }) => confirmed),
                           label: 'Confirmed Cases',
